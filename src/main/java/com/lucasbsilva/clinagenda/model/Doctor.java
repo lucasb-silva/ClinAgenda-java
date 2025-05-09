@@ -1,22 +1,23 @@
 package com.lucasbsilva.clinagenda.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
-@NoArgsConstructor
+@Entity
+@Table(name = "doctor")
 @Getter
 @Setter
-@Entity
-@Table(name = "status")
-public class Status {
+@NoArgsConstructor
+public class Doctor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String name;
+
+    @Column(name = "statusId")
+    private Integer statusId;
 }
